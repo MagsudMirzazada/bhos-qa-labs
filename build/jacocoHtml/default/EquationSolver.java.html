@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EquationSolver.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pr3</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">EquationSolver.java</span></div><h1>EquationSolver.java</h1><pre class="source lang-java linenums">import java.util.Arrays;
+import java.util.Scanner;
+
+<span class="nc" id="L4">public class EquationSolver {</span>
+    public static String solve(double a, double b, double c) {
+<span class="fc bfc" id="L6" title="All 2 branches covered.">        if (a == 0) {</span>
+<span class="fc" id="L7">            return &quot;Not a quadratic equation&quot;;</span>
+        }
+<span class="fc" id="L9">        double discSqrt = Math.sqrt(Math.pow(b, 2) - 4 * a * c);</span>
+<span class="fc" id="L10">        double root1 = (-b + discSqrt) / (2 * a);</span>
+<span class="fc" id="L11">        double root2 = (-b - discSqrt) / (2 * a);</span>
+<span class="fc" id="L12">        return Arrays.toString(new double[]{root1, root2});</span>
+    }
+
+    public static void main(String[] args) {
+<span class="nc" id="L16">        Scanner reader = new Scanner(System.in);</span>
+<span class="nc" id="L17">        System.out.println(&quot;Enter coefficient a: &quot;);</span>
+<span class="nc" id="L18">        String a = reader.nextLine();</span>
+<span class="nc" id="L19">        System.out.println(&quot;Enter coefficient b: &quot;);</span>
+<span class="nc" id="L20">        String b = reader.nextLine();</span>
+<span class="nc" id="L21">        System.out.println(&quot;Enter coefficient c: &quot;);</span>
+<span class="nc" id="L22">        String c = reader.nextLine();</span>
+        try {
+<span class="nc" id="L24">            double doublea = Double.parseDouble(a);</span>
+<span class="nc" id="L25">            double doubleb = Double.parseDouble(b);</span>
+<span class="nc" id="L26">            double doublec = Double.parseDouble(c);</span>
+<span class="nc" id="L27">            System.out.println(&quot;Roots: &quot;+ solve(doublea, doubleb, doublec));</span>
+<span class="nc" id="L28">        } catch (Exception e){</span>
+<span class="nc" id="L29">            System.out.println(&quot;Exception occured: &quot; + e);</span>
+<span class="nc" id="L30">        }</span>
+<span class="nc" id="L31">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
