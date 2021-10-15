@@ -1,22 +1,18 @@
 public class PermissionManager {
     private PermissionLevel mCurrentLevel = PermissionLevel.USER;
 
-    public String getmCurrentLevel(){
-        String permissionLevel = "";
-        switch (mCurrentLevel){
-            case USER:
-                permissionLevel = "User";
-                break;
-            case ADMIN:
-                permissionLevel = "Admin";
-                break;
-            case DEVELOPER:
-                permissionLevel = "Developer";
-                break;
-        }
-        return permissionLevel;
+    public String getmCurrentLevel() {
+        return mCurrentLevel.name().substring(0, 1).toUpperCase() + mCurrentLevel.name().substring(1).toLowerCase();
     }
-    public void setPermissionLevel(PermissionLevel permissionLevel){
-        mCurrentLevel = permissionLevel;
+
+    public void setmCurrentLevel(String level) {
+        this.mCurrentLevel = PermissionLevel.valueOf(level.toUpperCase());
     }
+
+    public static void main(String[] args) {
+        PermissionManager permissionManager = new PermissionManager();
+        permissionManager.setmCurrentLevel("Admin");
+        System.out.println(permissionManager.getmCurrentLevel());
+    }
+
 }
