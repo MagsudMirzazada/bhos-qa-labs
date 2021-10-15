@@ -23,11 +23,6 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-<<<<<<< HEAD
-      run: ./gradlew build
-    - name: JUnit Test
-      run: ./gradlew test --tests "*"
-=======
       run: ./gradlew test --tests "*"
     - name: Cache SonarCloud packages
       uses: actions/cache@v1
@@ -46,4 +41,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: ./gradlew clean build sonarqube --info
->>>>>>> ba509f2470768f27321b3c992ed36629e856e84d
