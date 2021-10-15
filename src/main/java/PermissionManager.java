@@ -1,18 +1,29 @@
 public class PermissionManager {
     private PermissionLevel mCurrentLevel = PermissionLevel.USER;
 
-    public String getmCurrentLevel() {
-        return mCurrentLevel.name().substring(0, 1).toUpperCase() + mCurrentLevel.name().substring(1).toLowerCase();
+    public String getPermissionLevel() {
+        String role;
+
+        switch(mCurrentLevel) {
+
+            case DEVELOPER:
+                role = "Developer";
+                break;
+
+            case ADMIN:
+                role = "Admin";
+                break;
+
+            case USER:
+                role = "User";
+                break;
+            default:
+                throw new IllegalStateException("Value is Unexpected : " + mCurrentLevel);
+        }
+        return role;
     }
 
-    public void setmCurrentLevel(String level) {
-        this.mCurrentLevel = PermissionLevel.valueOf(level.toUpperCase());
+    public void get_and_setPermissionLevel(PermissionLevel permissionLevel) {
+        mCurrentLevel = permissionLevel;
     }
-
-    public static void main(String[] args) {
-        PermissionManager permissionManager = new PermissionManager();
-        permissionManager.setmCurrentLevel("Admin");
-        System.out.println(permissionManager.getmCurrentLevel());
-    }
-
 }
