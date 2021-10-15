@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PermissionLevelTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-15T09:27:20" hostname="Magsuds-MacBook-Pro.local" time="0.03">
+  <properties/>
+  <testcase name="Role name should be returned" classname="PermissionLevelTest" time="0.025"/>
+  <testcase name="Role name should be equal to developer" classname="PermissionLevelTest" time="0.002"/>
+  <testcase name="Role name should be set and updated" classname="PermissionLevelTest" time="0.002"/>
+  <system-out><![CDATA[Get Test
+Set Test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
