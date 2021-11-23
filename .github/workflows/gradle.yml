@@ -42,3 +42,4 @@ jobs:
           FIREBASE_USER_ID: ${{ secrets.FIREBASE_USER_ID }}
 
         run: ./gradlew build
+
